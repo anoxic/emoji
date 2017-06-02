@@ -2,9 +2,19 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\Dotenv\Dotenv;
 
 class AppKernel extends Kernel
 {
+    public function __construct($environment, $debug)
+    {
+        if (file_exists($env = dirname(__DIR__).'/.env')) {
+            $dotenv = new Dotenv();
+            $dotenv->load($env);
+        }
+        parent::__construct($environment, $debug);
+    }
+
     public function registerBundles()
     {
         $bundles = [
