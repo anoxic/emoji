@@ -1,6 +1,6 @@
 {
     "name": "mykl/emoji",
-    "license": "proprietary",
+    "license": "none",
     "type": "project",
     "autoload": {
         "psr-4": {
